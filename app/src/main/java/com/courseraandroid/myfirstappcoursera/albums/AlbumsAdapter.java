@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.courseraandroid.myfirstappcoursera.R;
-import com.courseraandroid.myfirstappcoursera.model.Albums;
+import com.courseraandroid.myfirstappcoursera.model.Album;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
 public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsHolder> {
 
     @NonNull
-    private final List<Albums.DataBean> mAlbums = new ArrayList<>();
+    private final List<Album> mAlbums = new ArrayList<>();
     private final OnItemClickListener mOnItemClickListener;
 
 
@@ -42,7 +42,7 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsHolder> {
         return mAlbums.size();
     }
 
-    public void addData(List<Albums.DataBean> data, boolean isRefreshed){
+    public void addData(List<Album> data, boolean isRefreshed){
         if(isRefreshed){
             mAlbums.clear();
         }
@@ -51,6 +51,6 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsHolder> {
     }
 
     public interface OnItemClickListener {
-        void onItemClick(Albums.DataBean album);
+        void onItemClick(Album album);
     }
 }

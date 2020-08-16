@@ -1,5 +1,6 @@
 package com.courseraandroid.myfirstappcoursera;
 
+import com.courseraandroid.myfirstappcoursera.model.converter.DataConverterFactory;
 import com.google.gson.Gson;
 
 import org.jetbrains.annotations.NotNull;
@@ -50,6 +51,7 @@ public class ApiUtils {
                             .baseUrl(BuildConfig.SERVER_URL)
                             //need for interceptors
                             .client(getBasicAuthClient("","", false))
+                            .addConverterFactory(new DataConverterFactory())
                             .addConverterFactory(GsonConverterFactory.create(gson))
                             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                             .build();

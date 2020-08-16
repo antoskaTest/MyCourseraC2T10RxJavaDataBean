@@ -1,11 +1,10 @@
 package com.courseraandroid.myfirstappcoursera;
 
 import com.courseraandroid.myfirstappcoursera.model.Album;
-import com.courseraandroid.myfirstappcoursera.model.Albums;
 import com.courseraandroid.myfirstappcoursera.model.Song;
-import com.courseraandroid.myfirstappcoursera.model.Songs;
 import com.courseraandroid.myfirstappcoursera.model.User;
-import com.courseraandroid.myfirstappcoursera.model.UserForAuth;
+
+import java.util.List;
 
 import io.reactivex.Completable;
 import io.reactivex.Single;
@@ -24,13 +23,13 @@ public interface AcademyApi {
     //Call<UserForAuth> authentication();
 
     @GET("albums")
-    Single<Albums> getAlbums();
+    Single<List<Album>> getAlbums();
 
     @GET("albums/{id}")
     Single<Album> getAlbum(@Path("id") int id);
 
     @GET("songs")
-    Call<Songs> getSongs();
+    Call<List<Song>> getSongs();
 
     @GET("songs/{id}")
     Call<Song> getSong(@Path("id") int id);

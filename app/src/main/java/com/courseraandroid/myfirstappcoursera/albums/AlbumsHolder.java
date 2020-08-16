@@ -1,14 +1,13 @@
 package com.courseraandroid.myfirstappcoursera.albums;
 
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.courseraandroid.myfirstappcoursera.R;
-import com.courseraandroid.myfirstappcoursera.model.Albums;
+import com.courseraandroid.myfirstappcoursera.model.Album;
 
 public class AlbumsHolder extends RecyclerView.ViewHolder {
     private TextView mTitle;
@@ -20,7 +19,7 @@ public class AlbumsHolder extends RecyclerView.ViewHolder {
         mReleaseDate = itemView.findViewById(R.id.tv_release_date);
     }
 
-    public void bind(Albums.DataBean item, AlbumsAdapter.OnItemClickListener onItemClickListener){
+    public void bind(Album item, AlbumsAdapter.OnItemClickListener onItemClickListener){
         mTitle.setText(item.getName());
         mReleaseDate.setText(item.getRelease_date());
         if(onItemClickListener != null){

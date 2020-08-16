@@ -6,17 +6,7 @@ public class Song {
      * data : {"id":0,"name":"string","duration":"string"}
      */
 
-    private DataBean data;
 
-    public DataBean getData() {
-        return data;
-    }
-
-    public void setData(DataBean data) {
-        this.data = data;
-    }
-
-    public static class DataBean {
         /**
          * id : 0
          * name : string
@@ -50,5 +40,5 @@ public class Song {
         public void setDuration(String duration) {
             this.duration = duration;
         }
-    }
+
 }
